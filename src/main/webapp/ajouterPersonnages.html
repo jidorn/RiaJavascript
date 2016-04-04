@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disney</title>
+    <script type="text/javascript" src="ajax.js"></script>
+</head>
+<body>
+    <fieldset>
+        <legend>Ajouter un personnage Disney</legend>
+        <form method="post" name="disneyForm" onsubmit="return ajouterPersonnage()">
+            <div class="label">
+                <span>nom</span>
+                <input type="text" name="nom"/>
+            </div>
+            <div class="label">
+                <span>espece</span>
+                <input type="text" name="espece"/>
+            </div>
+            <div class="label">
+                <span>anime</span>
+                <input type="text" name="anime"/>
+            </div>
+            <div class="label">
+                <span>naissance</span>
+                <input type="text" name="naissance"/>
+            </div>
+            <div>
+                <input type="button" value="ajouter"/>
+                <input type="button" value="rechercher" onclick="rechercherPersonnage()">
+            </div>
+        </form>
+    </fieldset>
+<div id="resultat"></div>
+</body>
+</html>

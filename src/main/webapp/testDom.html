@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>testDom</title>
+    <script type="text/javascript">
+        function test(){
+            var methode1;
+            var methode2;
+            var methode3;
+            var methode4;
+            var methode5 =  "";
+            var methode6 =  "";
+
+            methode1 = document.getElementById("id_saisie").value;
+            //par formulaire
+            methode2 = document.monForm.saisie.value;
+            methode3 = document.forms[0].saisie.value;
+            methode4 = document.forms["monForm"].saisie.value;
+            //par collection de classe
+            collectionClasse = document.getElementsByClassName("class_saisie");
+            for (var i = 0;i<collectionClasse.length;i++){
+                if (collectionClasse[i].type === "text"){
+                    methode5 = collectionClasse[i].value;
+                }
+            }
+            // par collection de tag
+            collectionTag = document.getElementsByTagName("input");
+            for (i=0;i<collectionTag.length;i++){
+                if (collectionTag[i].id ==="id_saisie"){
+                    methode6 = collectionTag[i].value;
+                }
+            }
+            var objetJSON = {
+                a : methode1,
+                b : methode2,
+                c : methode3,
+                d : methode4,
+                e : methode5,
+                f : methode6,
+                toString : function () {
+                    console.log(this.a+", "+this.b+", "+this.c+", "+this.d+", "+this.e+", "+this.f);
+                }
+            };
+            objetJSON.toString();
+        }
+
+    </script>
+</head>
+<body>
+    <form name="monForm">
+        <span>saisie</span>
+        <input type="text" name="saisie" id="id_saisie" class="class_saisie"/>
+        <input type="submit" value="click (submit)!!!!"/>
+        <input type="button" value="click (button)!!!!" onclick="test()"/>
+    </form>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

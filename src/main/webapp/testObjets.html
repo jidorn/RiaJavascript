@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testObject</title>
+    <script type="text/javascript" src="testObjets.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var obj = new UneClasse(2,4, function () {
+        console.log("une fonction");
+    });
+    console.log(obj.att1);
+    obj.att1 = "ca Marche";
+    console.log(obj.att1);
+    console.log(obj.att2);
+    toto();
+    obj.uneAutreFonction();
+    obj.encoreUneFonction();
+    obj.test();
+</script>
+</body>
+</html>

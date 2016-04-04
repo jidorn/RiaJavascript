@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premier JS</title>
+</head>
+<body>
+<h1>Test Javascript</h1>
+<script type="text/javascript">
+    //<![CDATA[
+    // pour le xhtml et les caractères interdits : <>&...
+    var i = 5<2;
+    console.log(i+", "+typeof i);
+    var uneChaine = "coucou";
+    console.log(uneChaine+", "+ typeof uneChaine);
+    var unEntier = 5;
+    console.log(unEntier+", "+typeof unEntier);
+    var unDecimal = 5.25;
+    console.log(unDecimal+", "+typeof unDecimal);
+    var uneDate = new Date();
+    console.log(uneDate + ", "+ typeof uneDate);
+    var uneAutreDate = new Date("2016-03-15");
+    console.log(uneAutreDate+", "+typeof uneAutreDate);
+    console.log(uneDate.getMonth());
+    console.log(uneDate.getDay());
+    console.log(uneDate.getYear());
+    console.log(uneDate.getFullYear());
+    //class math
+    console.log(Math.random());
+    console.log(Math.min(-2,5,12,58.2,-8156.1,100));
+    console.log(Math.max(-2,5,12,58.2,-8156.1,100));
+    console.log(Math.floor(4.9));
+    console.log(Math.ceil(4.4));
+
+    //unTableau
+    var unTableau = new Array("test",2,true,new Date());
+    var unAutreTableau = ["coucou", 2,true,new Date()];
+    console.log(unTableau.length);
+    console.log(unTableau[0]);
+    console.log(unTableau[4]);
+    console.log(unTableau.shift()); //retire le premier fifo
+    console.log(unTableau.length);
+    console.log(unTableau.pop()); //retire le dernier lifo
+    console.log(unTableau.length);
+    unTableau.push("test",5,false); //ajoute a la fin
+    console.log(unTableau);
+
+    var test = unTableau.join("-");
+    console.log(test+", "+typeof test);
+    var test2 = test.split("-");
+    console.log(test2+", "+typeof test2);
+    for (var i= 0;i<unTableau.length;i++){
+        console.log(unTableau[i]);
+    }
+    var j= 0;
+    for(;;){
+        console.log(unTableau[j++]);
+        if (j==unTableau.length){
+            break;
+        }
+    }
+
+    //Exception
+    try {
+        coucou("test");
+    }catch (e){
+        console.log("fin du script");
+    }
+    console.log("fin du script");
+
+    var x = "15";
+    var y = 15;
+    console.log(x==y);
+    console.log(x===y);
+
+    try {
+        if (isNaN(x)){
+            throw "x pas un nombre";
+        }
+        else {
+            console.log("est un nombre");
+            z = Number(x);
+            console.log(y === z);
+        }
+    }catch (e){
+        console.log(e.message);
+    }
+
+    // ]]>
+</script>
+</body>
+</html>
